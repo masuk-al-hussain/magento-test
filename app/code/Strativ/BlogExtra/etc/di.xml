@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Strativ\Blog\Observer\LogPostDetailView">
+        <plugin name="strativ_blogextra_add_data_to_post_detail_observer" type="Strativ\BlogExtra\Plugin\AddDataToPostDetailObserver"/>
+        <plugin name="strativ_blogextra_plugin_prevent_post_detail_logger" type="Strativ\BlogExtra\Plugin\PreventPostDetailLogger" disabled="true"/>
+    </type>
+    <type name="Strativ\Blog\Controller\Post\Detail">
+        <plugin name="strativ_blogextra_plugin_alternate_post_detail_template" type="Strativ\BlogExtra\Plugin\AlternatePostDetailTemplate"/>
+    </type>
+
+    <preference for="Strativ\Blog\Controller\Post\Detail" type="Strativ\BlogExtra\Controller\Post\Detail"/>
+</config>
