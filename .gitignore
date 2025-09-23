@@ -1,0 +1,48 @@
+# Composer dependencies
+/vendor/
+
+# Magento generated code
+/generated/*
+!/generated/.htaccess
+
+# Runtime data
+/var/*
+!/var/.htaccess
+
+# Static assets (built)
+/pub/static/*
+!/pub/static/.htaccess
+
+# Media uploads
+/pub/media/*
+!/pub/media/.htaccess
+
+# Environment-specific configuration
+/app/etc/env.php
+
+# Keep the deployable config in VCS
+/app/etc/config.php
+
+# IDE/editor settings
+/.idea/
+/.vscode/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Node packages (if using frontend tooling)
+node_modules/
+
+# Tool caches
+.php-cs-fixer.cache
+
+# Composer auth (private credentials)
+auth.json
+
+# Environment files
+.env
+.env.local
+.env.*
+!.env.example
