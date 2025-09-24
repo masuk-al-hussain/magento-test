@@ -30,8 +30,7 @@ class Delete extends Action implements HttpGetActionInterface
         Context     $context,
         FaqFactory  $faqFactory,
         FaqResource $faqResource,
-    )
-    {
+    ) {
         $this->faqFactory = $faqFactory;
         $this->faqResource = $faqResource;
         parent::__construct($context);
