@@ -4,8 +4,8 @@
     <virtualType name="Strativ\FormGrid\Model\ResourceModel\Faq\Grid\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
-            <argument name="mainTable" xsi:type="string">strativ_fromgrid_faq</argument>
-            <argument name="resourceModel" xsi:type="string">Strativ\FromGrid\Model\ResourceModel\Faq</argument>
+            <argument name="mainTable" xsi:type="string">strativ_formgrid_faq</argument>
+            <argument name="resourceModel" xsi:type="string">Strativ\FormGrid\Model\ResourceModel\Faq</argument>
         </arguments>
     </virtualType>
 
