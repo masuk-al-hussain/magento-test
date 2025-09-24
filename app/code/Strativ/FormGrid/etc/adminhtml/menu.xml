@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Strativ_FormGrid::formgrid"
+             title="FormGrid"
+             translate="title"
+             module="Strativ_FormGrid"
+             parent="Magento_Backend::content"
+             resource="Strativ_FormGrid::formgrid"/>
+        <add
+            id="Strativ_FormGrid::faq"
+            title="FAQs"
+            translate="title"
+            module="Strativ_FormGrid"
+            resource="Strativ_FormGrid::faq"
+            parent="Strativ_FormGrid::formgrid"
+            action="formgrid/faq"
+        />
+    </menu>
+</config>
