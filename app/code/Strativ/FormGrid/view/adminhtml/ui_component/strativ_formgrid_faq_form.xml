@@ -10,6 +10,9 @@
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
     <settings>
+        <buttons>
+            <button name="save" class="Strativ\FormGrid\Block\Adminhtml\Faq\Edit\Button\Save"/>
+        </buttons>
         <namespace>strativ_formgrid_faq_form</namespace>
         <dataScope>data</dataScope>
         <deps>
@@ -22,6 +25,9 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <submitUrl path="*/*/save"/>
+        </settings>
         <dataProvider class="Strativ\FormGrid\Ui\DataProvider\Faq"
                       name="strativ_formgrid_faq_data_source">
             <settings>
