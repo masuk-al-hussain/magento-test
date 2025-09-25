@@ -13,5 +13,8 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
+        <index referenceId="STRATIV_FORMGRID_FAQ_QUESTION" indexType="fulltext">
+            <column name="question"/>
+        </index>
     </table>
 </schema>
