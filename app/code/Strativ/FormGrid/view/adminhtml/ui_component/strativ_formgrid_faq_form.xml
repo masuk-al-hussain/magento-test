@@ -11,6 +11,7 @@
     </argument>
     <settings>
         <buttons>
+            <button name="back" class="Strativ\FormGrid\Block\Adminhtml\Faq\Edit\Button\Back"/>
             <button name="save" class="Strativ\FormGrid\Block\Adminhtml\Faq\Edit\Button\Save"/>
         </buttons>
         <namespace>strativ_formgrid_faq_form</namespace>
