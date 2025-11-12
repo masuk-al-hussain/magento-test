@@ -44,9 +44,9 @@ class HelloCommand extends Command
             }
         } catch (LocalizedException $e) {
             $output->writeln("<error>{$e->getMessage()}</error>");
-            return 1;
+            $exitCode = 1;
         }
 
-        return 0;
+        return $exitCode;
     }
 }
