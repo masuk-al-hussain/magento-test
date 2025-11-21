@@ -1,0 +1,7 @@
+<?php
+/** @var \Strativ\Widget\Block\Widget\Test $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+
+<h3><?= $escaper->escapeHtml($block->getData('title')) ?></h3>
+<h3><?= $escaper->escapeHtml(__('Size')) ?> <?= $escaper->escapeHtml($block->getData('size')) ?></h3>
