@@ -24,8 +24,7 @@ class Example extends Template
         Template\Context $context,
         CacheInterface   $cache,
         array            $data = []
-    )
-    {
+    ) {
         $this->cache = $cache;
         parent::__construct($context, $data);
     }
@@ -39,6 +38,8 @@ class Example extends Template
      *
      * Note: After the lifespan of the custom cache bin/magento cache:clean can clear the cache
      * and the output will be (NEW GENERATED: + current time)
+     *
+     * Bonus: bin/magento cache:flush full_page will only clear the full page cache
      *
      * @return string
      */
