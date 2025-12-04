@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<cache_types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="urn:magento:framework:Cache/etc/cache_types.xsd">
+
+    <type name="cachedemo_data"
+          translate="label,description"
+          instance="Strativ\CacheDemo\Model\Cache\Type"
+          label="Cache Demo Data"
+          description="Stores demo cached text content."
+          cache_tag="CACHEDEMO_TAG"
+    />
+</cache_types>
+
