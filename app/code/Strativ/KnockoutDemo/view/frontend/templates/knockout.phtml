@@ -1,0 +1,17 @@
+<div id="ko-demo" data-bind="scope:'knockoutDemo'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#ko-demo": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "knockoutDemo": {
+                        "component": "Strativ_KnockoutDemo/js/view/demo"
+                    }
+                }
+            }
+        }
+    }
+</script>
