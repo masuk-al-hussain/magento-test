@@ -36,12 +36,23 @@ class Banner extends View
         $category = $this->getCurrentCategory();
         if ($category && $category->getCategoryBannerImage()) {
             $imageValue = $category->getCategoryBannerImage();
+            
+            if (strpos($imageValue, 'http') === 0) {
+                return $imageValue;
+            }
+            
+            $baseUrl = $this->storeManager->getStore()->getBaseUrl();
+            
+            if (strpos($imageValue, '/media/') === 0) {
+                return $baseUrl . ltrim($imageValue, '/');
+            }
+            
             $mediaUrl = $this->storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
             
-            if (strpos($imageValue, '/') === false) {
-                return $mediaUrl . 'catalog/category/' . $imageValue;
-            } else {
+            if (strpos($imageValue, 'catalog/category/') === 0) {
                 return $mediaUrl . $imageValue;
+            } else {
+                return $mediaUrl . 'catalog/category/' . $imageValue;
             }
         }
         return null;
