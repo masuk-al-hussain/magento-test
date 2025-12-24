@@ -15,7 +15,7 @@
                     <settings>
                         <required>false</required>
                         <uploaderConfig>
-                            <param xsi:type="url" name="url" path="strativ_categorybanner/category_image/upload"/>
+                            <param xsi:type="url" name="url" path="categorybanner/category_image/upload"/>
                         </uploaderConfig>
                         <previewTmpl>Magento_Catalog/image-preview</previewTmpl>
                         <openDialogTitle>Media Gallery</openDialogTitle>
