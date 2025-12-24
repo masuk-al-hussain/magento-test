@@ -18,4 +18,9 @@
             <argument name="imageUploader" xsi:type="object">Strativ\CategoryBanner\CategoryImageUploader</argument>
         </arguments>
     </type>
+    <type name="Magento\Catalog\Model\Category\Attribute\Backend\Image">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Strativ\CategoryBanner\CategoryImageUploader</argument>
+        </arguments>
+    </type>
 </config>
