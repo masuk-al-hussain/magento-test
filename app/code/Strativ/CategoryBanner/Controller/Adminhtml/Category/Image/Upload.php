@@ -5,21 +5,34 @@ namespace Strativ\CategoryBanner\Controller\Adminhtml\Category\Image;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Catalog\Model\ImageUploader;
+use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 
-class Upload extends Action
+class Upload extends Action implements HttpPostActionInterface
 {
-    protected $imageUploader;
+    /** @var ImageUploader */
+    protected ImageUploader $imageUploader;
 
+    /**
+     * @param Context $context
+     * @param ImageUploader $imageUploader
+     */
     public function __construct(
-        Context $context,
+        Context       $context,
         ImageUploader $imageUploader
-    ) {
+    )
+    {
         parent::__construct($context);
         $this->imageUploader = $imageUploader;
     }
 
-    public function execute()
+    /**
+     * Execute the image upload action
+     *
+     * @return Json
+     */
+    public function execute(): Json
     {
         try {
             $result = $this->imageUploader->saveFileToTmpDir('category_banner_image');
@@ -36,7 +49,12 @@ class Upload extends Action
         return $this->resultFactory->create(ResultFactory::TYPE_JSON)->setData($result);
     }
 
-    protected function _isAllowed()
+    /**
+     * Check if the user has permission to access this action
+     *
+     * @return bool
+     */
+    protected function _isAllowed(): bool
     {
         return $this->_authorization->isAllowed('Strativ_CategoryBanner::category_banner');
     }
