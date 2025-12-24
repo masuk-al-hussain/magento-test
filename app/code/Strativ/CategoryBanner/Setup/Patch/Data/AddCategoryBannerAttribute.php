@@ -5,24 +5,40 @@ namespace Strativ\CategoryBanner\Setup\Patch\Data;
 use Magento\Catalog\Model\Category;
 use Magento\Catalog\Model\Category\Attribute\Backend\Image;
 use Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface;
+use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Eav\Setup\EavSetupFactory;
+use Magento\Framework\Validator\ValidateException;
 
 class AddCategoryBannerAttribute implements DataPatchInterface
 {
-    private $moduleDataSetup;
-    private $eavSetupFactory;
+    /**@var ModuleDataSetupInterface */
+    private ModuleDataSetupInterface $moduleDataSetup;
+    /** @var EavSetupFactory */
+    private EavSetupFactory $eavSetupFactory;
 
+    /**
+     * Constructor
+     *
+     * @param ModuleDataSetupInterface $moduleDataSetup
+     * @param EavSetupFactory $eavSetupFactory
+     */
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        EavSetupFactory $eavSetupFactory
+        EavSetupFactory          $eavSetupFactory
     ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
-    public function apply()
+    /**
+     * Apply the data patch to add the category banner image attribute
+     *
+     * @return $this
+     * @throws LocalizedException|ValidateException
+     */
+    public function apply(): self
     {
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
@@ -46,12 +62,22 @@ class AddCategoryBannerAttribute implements DataPatchInterface
         return $this;
     }
 
-    public static function getDependencies()
+    /**
+     * Get the dependencies for this data patch
+     *
+     * @return array
+     */
+    public static function getDependencies(): array
     {
         return [];
     }
 
-    public function getAliases()
+    /**
+     * Get the aliases for this data patch
+     *
+     * @return array
+     */
+    public function getAliases(): array
     {
         return [];
     }
