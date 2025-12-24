@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var \Strativ\CategoryBanner\Block\Category\Banner $block
+ */
+?>
+<?php if ($block->hasBannerImage()): ?>
+    <div class="category-banner">
+        <img src="<?= $block->escapeUrl($block->getBannerImage()) ?>"
+             alt="<?= $block->escapeHtmlAttr($block->getCategoryName()) ?>"
+             class="category-banner-image"
+             loading="lazy" />
+    </div>
+<?php endif; ?>
