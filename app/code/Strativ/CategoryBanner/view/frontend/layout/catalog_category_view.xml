@@ -7,6 +7,11 @@
                    name="category.banner"
                    template="Strativ_CategoryBanner::category/banner.phtml"
                    before="-"/>
+            <block class="Magento\Cms\Block\Block" name="category.bottom.image" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">category-bottom-image</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
